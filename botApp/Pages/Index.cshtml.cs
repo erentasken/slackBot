@@ -12,7 +12,6 @@ namespace SlackIntegration.Pages
         public IActionResult OnPostEdit()
         {
             var slackClient = new SlackClient(SlackWebhookUrl);
-
             var slackMessage = new SlackMessage
             {
                 Text = "ASP.NET Core!",
