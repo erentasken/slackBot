@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "Hash": "fecRgcywSqUlIAMtuqiLP66s3faCXHehBNrzGR+r4rM=",
+  "Source": "botApp",
+  "BasePath": "_content/botApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css",
+      "SourceId": "botApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/botApp",
+      "RelativePath": "botApp.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css",
+      "SourceId": "botApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/botApp",
+      "RelativePath": "botApp.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css"
+    }
+  ]
+}

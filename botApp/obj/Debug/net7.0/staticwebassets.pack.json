@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\.NETbot-main\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\botApp.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.botApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.botApp.props",
+      "PackagePath": "build\\botApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.botApp.props",
+      "PackagePath": "buildMultiTargeting\\botApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.botApp.props",
+      "PackagePath": "buildTransitive\\botApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

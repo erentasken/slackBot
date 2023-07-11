@@ -1,0 +1,68 @@
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\appsettings.json
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.staticwebassets.runtime.json
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.exe
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.deps.json
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.runtimeconfig.json
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.dll
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\botApp.pdb
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.csproj.AssemblyReference.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.AssemblyInfoInputs.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.AssemblyInfo.cs
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.csproj.CoreCompileInputs.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.RazorAssemblyInfo.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.RazorAssemblyInfo.cs
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets\msbuild.botApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets\msbuild.build.botApp.props
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.botApp.props
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.botApp.props
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\scopedcss\bundle\botApp.styles.css
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\scopedcss\projectbundle\botApp.bundle.scp.css
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.dll
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\refint\botApp.dll
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.pdb
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.genruntimeconfig.cache
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\ref\botApp.dll
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\erenn\source\repos\botApp\botApp\bin\Debug\net7.0\Slack.Webhooks.dll
+C:\Users\erenn\source\repos\botApp\botApp\obj\Debug\net7.0\botApp.csproj.CopyComplete
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\appsettings.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.staticwebassets.runtime.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.exe
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.deps.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.runtimeconfig.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.dll
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\botApp.pdb
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\bin\Debug\net7.0\Slack.Webhooks.dll
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.csproj.AssemblyReference.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.AssemblyInfoInputs.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.AssemblyInfo.cs
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.csproj.CoreCompileInputs.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.RazorAssemblyInfo.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.RazorAssemblyInfo.cs
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets\msbuild.botApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets\msbuild.build.botApp.props
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.botApp.props
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.botApp.props
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\scopedcss\bundle\botApp.styles.css
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\scopedcss\projectbundle\botApp.bundle.scp.css
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.csproj.CopyComplete
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.dll
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\refint\botApp.dll
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.pdb
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\botApp.genruntimeconfig.cache
+C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot-main\botApp\obj\Debug\net7.0\ref\botApp.dll
