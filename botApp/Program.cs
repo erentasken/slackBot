@@ -1,9 +1,9 @@
 using System.Net;
 using System.Xml.Linq;
 using SlackNet;
-
+/*
 using SlackNet;
-using JMS.UploadFile;
+using JMS.UploadFile;*/
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -28,7 +28,7 @@ app.MapRazorPages();
 
 
 
-const string botUserOAuthToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi"; //modify this one
+/*const string botUserOAuthToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi"; //modify this one
 const string slackChannel = "#general";
 
 
@@ -42,7 +42,7 @@ var api = new SlackServiceBuilder()
     .GetApiClient();
 
 var result = await api.Files.Upload("bayildi", fileExtension, fileName + fileExtension, title, comment, null, new List<string>() { slackChannel });
-
+*/
 
 
 app.Run();
