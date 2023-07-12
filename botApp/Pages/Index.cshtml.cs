@@ -4,7 +4,7 @@ using Slack.Webhooks;
 using SlackNet;
 
 
-using SlackNet;
+
 using JMS.UploadFile;
 using System.Runtime.CompilerServices;
 
@@ -33,15 +33,16 @@ namespace SlackIntegration.Pages
             const string botUserOAuthToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi"; //modify this one
             const string slackChannel = "#general";
 
-            const string fileName = "dsa";
-            const string fileExtension = ".gif";
+            //const string fileName = "dsa";
+            //const string fileExtension = ".gif";
             const string title = "A Customer Report";
             const string comment = "Attached is a customer's report";
 
             var api = new SlackServiceBuilder()
                 .UseApiToken(botUserOAuthToken)
                 .GetApiClient();
-
+            var fileName = Request.Form["filename"];
+            var fileExtension = Request.Form["fileextension"];
             var result = await api.Files.Upload("bayildi", fileExtension, fileName + fileExtension, title, comment, null, new List<string>() { slackChannel });
 
             RedirectToPage("Index");

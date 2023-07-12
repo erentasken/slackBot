@@ -4,10 +4,15 @@
     ViewData["Title"] = "Home page";
 }
 
+
 <div class="text-center">
     <h1 class="display-4">Slack Bot V1</h1>
     <form method = "POST">
-        <button asp-page-handler="Edit">bana bas</button>
-        <button asp-page-handler="Update">bana da bas</button>
+        <button asp-page-handler="Edit">mesaj yolla</button>
+        <label for="filename">Gönderilecek dosya adı:</label>
+        <input type="text" name="filename" value="" />
+        <label for="fileextension">Dosya türü:</label>
+        <input type="text" name="fileextension" value="" />
+        <button asp-page-handler="Update">gönder</button>
     </form>
 </div>
