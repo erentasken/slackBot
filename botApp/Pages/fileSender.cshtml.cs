@@ -13,7 +13,7 @@ namespace botApp.Pages
 {
     public class fileSenderModel : PageModel
     {
-        private const string SlackWebhookUrl = "https://hooks.slack.com/services/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";
+        //private const string SlackWebhookUrl = "https://hooks.slack.com/services/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";
         private readonly ILogger<IndexModel> _logger;
 
         public fileSenderModel(ILogger<IndexModel> logger)

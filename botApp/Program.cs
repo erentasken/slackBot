@@ -27,22 +27,4 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 
-
-/*const string botUserOAuthToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi"; //modify this one
-const string slackChannel = "#general";
-
-
-const string fileName = "dsa";
-const string fileExtension = ".gif";
-const string title = "A Customer Report";
-const string comment = "Attached is a customer's report";
-
-var api = new SlackServiceBuilder()
-    .UseApiToken(botUserOAuthToken)
-    .GetApiClient();
-
-var result = await api.Files.Upload("bayildi", fileExtension, fileName + fileExtension, title, comment, null, new List<string>() { slackChannel });
-*/
-
-
 app.Run();
