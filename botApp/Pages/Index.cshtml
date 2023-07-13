@@ -1,18 +1,14 @@
 ﻿@page
 @model SlackIntegration.Pages.IndexModel;
+
 @{
     ViewData["Title"] = "Home page";
 }
 
-
-<div class="text-center">
-    <h1 class="display-4">Slack Bot V1</h1>
-    <form method = "POST">
-        <button asp-page-handler="Edit">mesaj yolla</button>
-        <label for="filename">Gönderilecek dosya adı:</label>
-        <input type="text" name="filename" value="" />
-        <label for="fileextension">Dosya türü:</label>
-        <input type="text" name="fileextension" value="" />
-        <button asp-page-handler="Update">gönder</button>
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h1 class="display-1 text-center">Slack Bot V1</h1>
+        </div>
+    </div>
 </div>

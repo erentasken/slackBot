@@ -1,0 +1,46 @@
+﻿@page
+@model botApp.Pages.fileSenderModel
+
+@{
+	ViewData["Title"] = "File sender";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form method="POST">
+                <h1 class="display-4 text-center">Dosya Gönderme Aracı</h1>
+                
+                <div class="mb-3">
+                    <label for="channelName" class="form-label">Gönderilecek Kanal:</label>
+                    <input type="text" class="form-control" name="channelName" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="fileName" class="form-label">Gönderilecek dosya adı:</label>
+                    <input type="text" class="form-control" name="fileName" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="fileContent" class="form-label">Dosya içeriği:</label>
+                    <input type="text" class="form-control" name="fileContent" />
+                </div>
+                <div class="mb-3">
+                    <label for="fileExtension" class="form-label">Dosya Uzantısı:</label>
+                    <input type="text" class="form-control" name="fileExtension"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fileTitle" class="form-label">Dosya başlığı:</label>
+                    <input type="text" class="form-control" name="fileTitle" />
+                </div>
+                <div class="mb-3">
+                    <label for="fileComment" class="form-label">Dosya yorumu:</label>
+                    <input type="text" class="form-control" name="fileComment" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" name="Update" asp-page-handler="Update">Dosyayı Gönder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
