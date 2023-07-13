@@ -106,19 +106,21 @@ namespace botApp.Pages
                     List<string> channelNames = new List<string>();
                     _logger.LogInformation($"{data.channels}");
 
-                    int i = 0;
+                    string dataX = "";
                     foreach (var channel in data.channels)
                     {
-                        _logger.LogInformation("hehehehe");
-                        i++;
-                        channelNames.Add(channel.name);
-
+                        dataX += channel.name + " ";
                     }
 
+                    dataX = dataX.TrimEnd();
+                    string[] channelsArray;
+                    channelsArray = dataX.Split(" ");
 
-                    _logger.LogInformation($"{i}");
 
-
+                    for(int i = 0; i < channelsArray.Length; i ++)
+                    {
+                        _logger.LogInformation($" KANALIZE : {channelsArray[i]}");
+                    }
 
                     return channelNames;
                 }
