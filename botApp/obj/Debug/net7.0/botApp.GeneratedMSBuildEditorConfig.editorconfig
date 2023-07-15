@@ -9,41 +9,41 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = botApp
 build_property.RootNamespace = botApp
-build_property.ProjectDir = C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp\
+build_property.ProjectDir = C:\Users\erenn\Masaüstü\slackBot\botApp\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp
+build_property.MSBuildProjectDirectory = C:\Users\erenn\Masaüstü\slackBot\botApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/Error.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/fileSender.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/fileSender.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmlsZVNlbmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/Index.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/messageSender.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/messageSender.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbWVzc2FnZVNlbmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/Privacy.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/_ViewImports.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/_ViewStart.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eren.tasken/OneDrive - sabancidx.com/Masaüstü/.NETbot/botApp/Pages/Shared/_Layout.cshtml]
+[C:/Users/erenn/Masaüstü/slackBot/botApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s4itsrllmb

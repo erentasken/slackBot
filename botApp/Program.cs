@@ -1,9 +1,6 @@
 using System.Net;
 using System.Xml.Linq;
 using SlackNet;
-/*
-using SlackNet;
-using JMS.UploadFile;*/
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
