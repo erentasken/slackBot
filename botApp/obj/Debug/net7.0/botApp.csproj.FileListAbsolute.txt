@@ -234,3 +234,4 @@ C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\refint\botApp.dll
 C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\botApp.pdb
 C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\botApp.genruntimeconfig.cache
 C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\ref\botApp.dll
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\RestSharp.dll

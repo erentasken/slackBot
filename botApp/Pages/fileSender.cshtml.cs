@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.ComponentModel;
 using Microsoft.Extensions.Logging;
 using SlackIntegration.Pages;
+using RestSharp;
 
 namespace botApp.Pages
 {
@@ -44,6 +45,53 @@ namespace botApp.Pages
                 _logger.LogInformation(e.Message);
             }
         }
+
+        public void OnPostUploadFile()
+        {
+            var fileName = Request.Form["fileNameFirst"];
+            var fileExtension = Request.Form["fileExtensionFirst"];
+            string fileFullName = fileName + "." + fileExtension;
+            string filePath = @"C:\Users\erenn\Masaüstü\slackBot\filesForUpload\" + fileFullName;
+            string token = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi";
+
+            var channels = Request.Form["channelNamesFirst"];
+            if (channels.Contains<string>("general"))
+            {
+                uploadFileToChannel(filePath, token, "general");
+            }
+            if (channels.Contains<string>("budget"))
+            {
+                uploadFileToChannel(filePath, token, "budget");
+            }
+            if (channels.Contains<string>("random"))
+            {
+                uploadFileToChannel(filePath, token, "random");
+            }
+
+            
+        }
+
+        private void uploadFileToChannel(string filePath, string token, string channel)
+        {
+            var client = new RestClient("https://slack.com/api/files.upload");
+            var request = new RestRequest("https://slack.com/api/files.upload", Method.Post);
+            request.AddParameter("token", token);
+            request.AddParameter("channels", channel);
+            request.AddFile("file", filePath);
+
+            var response = client.Execute(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                Console.WriteLine("File uploaded successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Error uploading file: " + response.Content);
+            }
+        }
+
+
 
         public async void OnPostUpdate()
         {
@@ -84,8 +132,6 @@ namespace botApp.Pages
                 {
                     dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(responseContent);
 
-                    Console.WriteLine(data);
-
                     if (data.ok == "true")
                     {
                         string dataX = "";
@@ -115,7 +161,7 @@ namespace botApp.Pages
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"{e.Message} exception handled");
+                Console.WriteLine(e.Message);
             }
             return null;
 

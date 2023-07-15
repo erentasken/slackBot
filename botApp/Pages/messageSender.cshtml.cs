@@ -82,8 +82,6 @@ namespace botApp.Pages
                 {
                     dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(responseContent);
 
-                    Console.WriteLine(data);
-
                     if (data.ok == "true")
                     {
                         string dataX = "";
@@ -95,7 +93,6 @@ namespace botApp.Pages
                         dataX = dataX.TrimEnd();
                         string[] channelsArray;
                         channelsArray = dataX.Split(" ");
-
 
                         return channelsArray;
                     }
@@ -113,7 +110,7 @@ namespace botApp.Pages
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"{e.Message} exception handled");
+                Console.WriteLine(e.Message + " exception handled");
             }
             return null;
             

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="JMS.UploadFile.AspNetCore" Version="1.0.2.1" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="Slack.Webhooks" Version="1.1.5" />
     <PackageReference Include="SlackNet" Version="0.10.24" />
   </ItemGroup>
