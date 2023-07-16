@@ -7,7 +7,6 @@ namespace botApp.Pages
     public class messageSenderModel : PageModel
     {
         static readonly System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
-        // Replace with your own Slack webhook URL
         private string SlackWebhookUrl;
         private readonly ILogger<IndexModel> _logger;
 

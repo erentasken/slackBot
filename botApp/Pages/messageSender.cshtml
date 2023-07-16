@@ -19,8 +19,8 @@
                 <div class ="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var messageSender = new messageSenderModel(null); // Create an instance of the messageSenderModel
-                        var channelNames = await messageSender.FetchChannelNamesAsync(); // Call the FetchChannelNamesAsync function
+                        var messageSender = new messageSenderModel(null); 
+                        var channelNames = await messageSender.FetchChannelNamesAsync(); 
 
                         if (channelNames != null)
                         {
