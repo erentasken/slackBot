@@ -1,6 +1,4 @@
-using System.Diagnostics.Eventing.Reader;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Org.BouncyCastle.Asn1;
 using Slack.Webhooks;
 using SlackIntegration.Pages;
 
@@ -12,7 +10,6 @@ namespace botApp.Pages
         // Replace with your own Slack webhook URL
         private string SlackWebhookUrl;
         private readonly ILogger<IndexModel> _logger;
-
 
         public messageSenderModel(ILogger<IndexModel> logger)
         {
@@ -63,19 +60,24 @@ namespace botApp.Pages
             RedirectToPage("messageSender");
         }
 
+        public async Task<HttpResponseMessage> requestFromApi()
+        {
+            string url = "https://slack.com/api/conversations.list";
+            string apiToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi";
+            httpClient.DefaultRequestHeaders.Remove("Authorization");
+            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiToken}");
+
+            HttpResponseMessage response = await httpClient.GetAsync(url);
+
+            return response;
+        }
 
         public async Task<string[]> FetchChannelNamesAsync()
         {
+
             try
             {
-                string url = "https://slack.com/api/conversations.list";
-                string types = "public_channel,private_channel";
-                string apiToken = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi";
-                httpClient.DefaultRequestHeaders.Remove("Authorization");
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiToken}");
-                
-                string requestUrl = $"{url}?types={types}";
-                HttpResponseMessage response = await httpClient.GetAsync(requestUrl);
+                HttpResponseMessage response = await requestFromApi();
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)
@@ -113,7 +115,7 @@ namespace botApp.Pages
                 Console.WriteLine(e.Message + " exception handled");
             }
             return null;
-            
+
         }
     }
 }
