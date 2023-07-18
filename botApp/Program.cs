@@ -2,6 +2,9 @@ using System.Net;
 using System.Xml.Linq;
 using SlackNet;
 
+
+//using DSharpPlus.SlashCommands;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();

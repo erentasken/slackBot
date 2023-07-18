@@ -17,7 +17,7 @@ namespace botApp.Pages
             _logger = logger;
         }
 
-        public async void OnPostUpdate()
+        public void OnPostUpdate()
         {
             var channels = Request.Form["channelNames"];
             if (channels.Contains<string>("general"))
@@ -41,18 +41,33 @@ namespace botApp.Pages
             var fileName = Request.Form["fileNameFirst"];
             var fileExtension = Request.Form["fileExtensionFirst"];
             string fileFullName = fileName + "." + fileExtension;
-            string filePath = @"C:\Users\erenn\Masaüstü\slackBot\filesForUpload\" + fileFullName;
 
+            // Get the project's root directory path dynamically
+            string rootDirectory = AppContext.BaseDirectory;
+            string filesDirectory = "filesForUpload";
+            string filePath = Path.Combine(rootDirectory, filesDirectory, fileFullName);
+
+            // Get the parent directory (remove "bin\Debug\net7.0")
+            string parentDirectory = Directory.GetParent(rootDirectory).FullName;
+            parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+
+
+            filePath = parentDirectory + @"\filesForUpload" +@"\" + fileFullName;
+
+            
             var channels = Request.Form["channelNamesFirst"];
-            if (channels.Contains<string>("general"))
+            if (channels.Contains("general"))
             {
                 uploadFileToChannel(filePath, token, "general");
             }
-            if (channels.Contains<string>("budget"))
+            if (channels.Contains("budget"))
             {
                 uploadFileToChannel(filePath, token, "budget");
             }
-            if (channels.Contains<string>("random"))
+            if (channels.Contains("random"))
             {
                 uploadFileToChannel(filePath, token, "random");
             }
@@ -100,8 +115,15 @@ namespace botApp.Pages
             var request = new RestRequest("https://slack.com/api/files.upload", Method.Post);
             request.AddParameter("token", token);
             request.AddParameter("channels", channel);
-            request.AddFile("file", filePath);
-
+            //request.AddFile("file", filePath);
+            
+            try
+            {
+                request.AddFile("file", filePath);
+            }catch(FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             var response = client.Execute(request);
 
             return response;
