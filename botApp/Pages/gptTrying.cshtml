@@ -1,0 +1,13 @@
+﻿@page
+@model botApp.Pages.gptTryingModel
+
+<form method="post">
+    <input type="text" name="prompt" placeholder="Enter your prompt" />
+    <button type="submit">Submit</button>
+</form>
+
+@if (Model.ResultText != null)
+{
+    <h3>Completion Result:</h3>
+    <p>@Model.ResultText</p>
+}

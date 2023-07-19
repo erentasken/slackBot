@@ -1,9 +1,8 @@
 using System.Net;
 using System.Xml.Linq;
+using Microsoft.Extensions.DependencyInjection;
 using SlackNet;
 
-
-//using DSharpPlus.SlashCommands;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -25,6 +24,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
 
 
 app.Run();

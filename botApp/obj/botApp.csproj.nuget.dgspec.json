@@ -49,15 +49,31 @@
               "target": "Package",
               "version": "[1.0.2.1, )"
             },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
             "RestSharp": {
               "target": "Package",
               "version": "[110.2.0, )"
+            },
+            "Rystem.OpenAi": {
+              "target": "Package",
+              "version": "[3.3.1, )"
             },
             "Slack.Webhooks": {
               "target": "Package",
               "version": "[1.1.5, )"
             },
             "SlackNet": {
+              "target": "Package",
+              "version": "[0.10.24, )"
+            },
+            "SlackNet.AspNetCore": {
+              "target": "Package",
+              "version": "[0.10.24, )"
+            },
+            "SlackNet.Bot": {
               "target": "Package",
               "version": "[0.10.24, )"
             }
