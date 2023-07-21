@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Slack.Webhooks;
 using SlackIntegration.Pages;
+using SlackNet.SocketMode;
+
+using SlackConnector;
 
 namespace botApp.Pages
 {
@@ -17,6 +20,7 @@ namespace botApp.Pages
 
 
         private void sendMessageToChannel(string channelName, string message) {
+            
             var slackClient = new SlackClient(SlackWebhookUrl);
             var slackMessage = new SlackMessage
             {

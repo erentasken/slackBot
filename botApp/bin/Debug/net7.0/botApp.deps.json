@@ -14,6 +14,7 @@
           "RestSharp": "110.2.0",
           "Rystem.OpenAi": "3.3.1",
           "Slack.Webhooks": "1.1.5",
+          "SlackConnector": "5.1.11",
           "SlackNet": "0.10.24",
           "SlackNet.AspNetCore": "0.10.24",
           "SlackNet.Bot": "0.10.24",
@@ -62,6 +63,27 @@
           "lib/BouncyCastle.Crypto.dll": {
             "assemblyVersion": "1.8.5.0",
             "fileVersion": "1.8.19031.1"
+          }
+        }
+      },
+      "Flurl/2.8.2": {
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "assemblyVersion": "2.8.2.0",
+            "fileVersion": "2.8.2.0"
+          }
+        }
+      },
+      "Flurl.Http/2.4.2": {
+        "dependencies": {
+          "Flurl": "2.8.2",
+          "Newtonsoft.Json": "13.0.3",
+          "System.Text.Encoding.CodePages": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
@@ -835,6 +857,19 @@
           }
         }
       },
+      "SlackConnector/5.1.11": {
+        "dependencies": {
+          "Flurl.Http": "2.4.2",
+          "Newtonsoft.Json": "13.0.3",
+          "Websocket.Client": "4.1.78"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SlackConnector.dll": {
+            "assemblyVersion": "5.1.11.0",
+            "fileVersion": "5.1.11.0"
+          }
+        }
+      },
       "SlackNet/0.10.24": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -1365,7 +1400,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1578,10 +1613,10 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Text.Encoding.CodePages/4.5.0": {
+      "System.Text.Encoding.CodePages/4.5.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         }
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -1609,6 +1644,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Threading.Channels/4.7.0": {},
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1673,12 +1709,24 @@
           "System.Collections.NonGeneric": "4.3.0",
           "System.IO": "4.3.0",
           "System.Security.Cryptography.Csp": "4.3.0",
-          "System.Text.Encoding.CodePages": "4.5.0"
+          "System.Text.Encoding.CodePages": "4.5.1"
         },
         "runtime": {
           "lib/netstandard2.0/Way.Lib.dll": {
             "assemblyVersion": "2.0.10.13",
             "fileVersion": "2.0.10.13"
+          }
+        }
+      },
+      "Websocket.Client/4.1.78": {
+        "dependencies": {
+          "System.Reactive": "4.3.2",
+          "System.Threading.Channels": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Websocket.Client.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
           }
         }
       },
@@ -1735,6 +1783,20 @@
       "sha512": "sha512-196QWfvglefGd/Cr2C4hIdmA9HYkLFZovxJ7L0BAOFlNn+qlmVxqpxpcKGoC5AF4rOuoUq3ylzLgKZW5j4nmDQ==",
       "path": "bouncycastle/1.8.5",
       "hashPath": "bouncycastle.1.8.5.nupkg.sha512"
+    },
+    "Flurl/2.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3VEYAqkGTGHgla4xuyEB4d8XGLeMX2k05C4WfI7YmKQHsL7RhoGu3L6h1xsKKTPFWjEL13p09XOIGwD1pQ86dg==",
+      "path": "flurl/2.8.2",
+      "hashPath": "flurl.2.8.2.nupkg.sha512"
+    },
+    "Flurl.Http/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VfSJ0DKzh6kf2IOZGG1/JpHajhtqzGp1t+M1QSyFGse7c4Gg1DpH80LTveYea2hV1BEtvPPEp6A4iZ78D8bxGQ==",
+      "path": "flurl.http/2.4.2",
+      "hashPath": "flurl.http.2.4.2.nupkg.sha512"
     },
     "Grpc.Core/2.46.6": {
       "type": "package",
@@ -2373,6 +2435,13 @@
       "path": "slack.webhooks/1.1.5",
       "hashPath": "slack.webhooks.1.1.5.nupkg.sha512"
     },
+    "SlackConnector/5.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QwqivIyl+adxIHj13rGMIPL1cHiDKKIW5WwMtuagU8tCnGxV+BxoQuCRpkxbTfYtyaYZZCD4Picyeoi4/E1oEA==",
+      "path": "slackconnector/5.1.11",
+      "hashPath": "slackconnector.5.1.11.nupkg.sha512"
+    },
     "SlackNet/0.10.24": {
       "type": "package",
       "serviceable": true,
@@ -2737,12 +2806,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -2870,12 +2939,12 @@
       "path": "system.text.encoding/4.3.0",
       "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
     },
-    "System.Text.Encoding.CodePages/4.5.0": {
+    "System.Text.Encoding.CodePages/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
-      "path": "system.text.encoding.codepages/4.5.0",
-      "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
+      "sha512": "sha512-4J2JQXbftjPMppIHJ7IC+VXQ9XfEagN92vZZNoG12i+zReYlim5dMoXFC1Zzg7tsnKDM7JPo5bYfFK4Jheq44w==",
+      "path": "system.text.encoding.codepages/4.5.1",
+      "hashPath": "system.text.encoding.codepages.4.5.1.nupkg.sha512"
     },
     "System.Text.Encoding.Extensions/4.3.0": {
       "type": "package",
@@ -2911,6 +2980,13 @@
       "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Channels/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gdOOXBhtt2UpTxYJm1DRmoqNfYg5ypvhzhVt0vxKhzxXFjS81r8yIOSFsJYLRa1Jc14GBAqCnjxJstO3zBN7gg==",
+      "path": "system.threading.channels/4.7.0",
+      "hashPath": "system.threading.channels.4.7.0.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",
@@ -2960,6 +3036,13 @@
       "sha512": "sha512-gSmUdTv2+xgy5W2scWEIMLLvUHUWmUn6M8Er4p6xd0l0sKrKahMj+FvnJGbjuTqh6k6W2dxonEsS+BFy5EZfFA==",
       "path": "way.lib/2.0.10.13",
       "hashPath": "way.lib.2.0.10.13.nupkg.sha512"
+    },
+    "Websocket.Client/4.1.78": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9ESroOV2gBX7zkwC+KcRFcmzbUwMca7txHWtj4SYrEHSofnb2gxICGXlJvos1zCjhuR3H33zPj/sSUWmlL2kXg==",
+      "path": "websocket.client/4.1.78",
+      "hashPath": "websocket.client.4.1.78.nupkg.sha512"
     },
     "WebSocket4Net/0.15.1": {
       "type": "package",

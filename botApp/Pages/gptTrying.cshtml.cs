@@ -10,6 +10,8 @@ using SlackNet.Interaction;
 using SlackNet.WebApi;
 using SlackNet;
 
+using SlackConnector;
+
 namespace botApp.Pages
 {
     public class gptTryingModel : PageModel
@@ -19,15 +21,6 @@ namespace botApp.Pages
         [BindProperty]
         public string Prompt { get; set; }
         public string ResultText { get; set; }
-
-        public void OnGet()
-        {
-            // Initialize the Prompt if needed
-            if (string.IsNullOrEmpty(Prompt))
-            {
-                Prompt = "how are you";
-            }
-        }
 
         public async Task OnPostAsync()
         {
