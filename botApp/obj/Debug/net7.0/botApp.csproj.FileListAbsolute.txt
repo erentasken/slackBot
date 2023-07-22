@@ -178,8 +178,6 @@ C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp\obj\D
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp\obj\Debug\net7.0\botApp.pdb
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp\obj\Debug\net7.0\botApp.genruntimeconfig.cache
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\.NETbot\botApp\obj\Debug\net7.0\ref\botApp.dll
-C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\appsettings.json
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.staticwebassets.runtime.json
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.exe
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.deps.json
@@ -352,3 +350,5 @@ C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Flurl.dll
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Flurl.Http.dll
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\SlackConnector.dll
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Websocket.Client.dll
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Settings\appsettings.Development.json
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Settings\appsettings.json
