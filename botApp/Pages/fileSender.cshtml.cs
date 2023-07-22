@@ -11,10 +11,8 @@ namespace botApp.Pages
         static readonly HttpClient httpClient = new HttpClient();
         private readonly ILogger<IndexModel> _logger;
         private SlackToken token;
-        public fileSenderModel(ILogger<IndexModel> logger)
+        public fileSenderModel()
         {
-            _logger = logger;
-
             token = SlackToken.GetObject();
         }
 
@@ -114,7 +112,6 @@ namespace botApp.Pages
             var request = new RestRequest("https://slack.com/api/files.upload", Method.Post);
             request.AddParameter("token", token);
             request.AddParameter("channels", channel);
-            //request.AddFile("file", filePath);
             
             try
             {

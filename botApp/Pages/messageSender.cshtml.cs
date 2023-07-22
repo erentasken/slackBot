@@ -14,10 +14,9 @@ namespace botApp.Pages
 
         SlackToken token;
 
-        public messageSenderModel(ILogger<IndexModel> logger)
+        public messageSenderModel()
         {
             token = SlackToken.GetObject();
-            _logger = logger;
         }
 
         public void OnPostEdit()
@@ -73,7 +72,7 @@ namespace botApp.Pages
             return response;
         }
 
-        public async Task<string[]> FetchChannelNamesAsync()
+        public async Task<string[]?> FetchChannelNamesAsync()
         {
 
             try
