@@ -25,7 +25,7 @@
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var fileSender = new fileSenderModel(null); 
+                        var fileSender = new fileSenderModel(); 
                         var channelNames = await fileSender.FetchChannelNamesAsync(); 
 
                         if (channelNames != null)
@@ -72,7 +72,7 @@
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var fileSenderFirst = new fileSenderModel(null);
+                        var fileSenderFirst = new fileSenderModel();
                         var channelNamesFirst = await fileSenderFirst.FetchChannelNamesAsync();
 
                         if (channelNamesFirst != null)

@@ -19,7 +19,7 @@
                 <div class ="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var messageSender = new messageSenderModel(null); 
+                        var messageSender = new messageSenderModel(); 
                         var channelNames = await messageSender.FetchChannelNamesAsync(); 
 
                         if (channelNames != null)
