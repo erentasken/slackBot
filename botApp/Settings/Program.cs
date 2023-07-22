@@ -1,9 +1,3 @@
-using System.Net;
-using System.Xml.Linq;
-using Microsoft.Extensions.DependencyInjection;
-using SlackNet;
-
-
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();

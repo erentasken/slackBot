@@ -1,3 +1,4 @@
+using botApp.Settings;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RestSharp;
 using SlackIntegration.Pages;
@@ -7,14 +8,14 @@ namespace botApp.Pages
 {
     public class fileSenderModel : PageModel
     {
-        static readonly System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
+        static readonly HttpClient httpClient = new HttpClient();
         private readonly ILogger<IndexModel> _logger;
-
-        private string token = "xoxb-5526553258965-5543788954934-Wvwn8VFl5Y6MlrbyGvBtUkSi";
-
+        private SlackToken token;
         public fileSenderModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+
+            token = SlackToken.GetObject();
         }
 
         public void OnPostUpdate()
@@ -47,13 +48,11 @@ namespace botApp.Pages
             string filesDirectory = "filesForUpload";
             string filePath = Path.Combine(rootDirectory, filesDirectory, fileFullName);
 
-            // Get the parent directory (remove "bin\Debug\net7.0")
             string parentDirectory = Directory.GetParent(rootDirectory).FullName;
             parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
             parentDirectory = Directory.GetParent(parentDirectory).FullName;
             parentDirectory = Directory.GetParent(parentDirectory).FullName;
             parentDirectory = Directory.GetParent(parentDirectory).FullName;
-
 
             filePath = parentDirectory + @"\filesForUpload" +@"\" + fileFullName;
 
@@ -61,22 +60,22 @@ namespace botApp.Pages
             var channels = Request.Form["channelNamesFirst"];
             if (channels.Contains("general"))
             {
-                uploadFileToChannel(filePath, token, "general");
+                uploadFileToChannel(filePath, token.BotToken, "general");
             }
             if (channels.Contains("budget"))
             {
-                uploadFileToChannel(filePath, token, "budget");
+                uploadFileToChannel(filePath, token.BotToken, "budget");
             }
             if (channels.Contains("random"))
             {
-                uploadFileToChannel(filePath, token, "random");
+                uploadFileToChannel(filePath, token.BotToken, "random");
             }
         }
 
         private async void sendFileToChannel(string channelName)
         {
             var api = new SlackServiceBuilder()
-                .UseApiToken(token)
+                .UseApiToken(token.BotToken)
                 .GetApiClient();
 
             var fileName = Request.Form["fileName"];
@@ -135,7 +134,7 @@ namespace botApp.Pages
             {
                 string url = "https://slack.com/api/conversations.list";
                 httpClient.DefaultRequestHeaders.Remove("Authorization");
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token.BotToken}");
 
                 HttpResponseMessage response = await httpClient.GetAsync(url);
                 string responseContent = await response.Content.ReadAsStringAsync();
