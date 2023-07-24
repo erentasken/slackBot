@@ -15,7 +15,7 @@ namespace botApp.Pages
         public void OnGet()
         {
             openAi = OpenAI.GetObject();
-            APIkey = openAi.openAiKey;
+            APIkey = openAi.openAiKey;ff
         }
 
         [BindProperty]
