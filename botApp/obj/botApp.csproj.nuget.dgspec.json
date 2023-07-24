@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {}
+    "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {
+    "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+        "projectUniqueName": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
         "projectName": "botApp",
-        "projectPath": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
-        "packagesPath": "C:\\Users\\eren.tasken\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\",
+        "projectPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+        "packagesPath": "C:\\Users\\erenn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eren.tasken\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\erenn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,15 +49,35 @@
               "target": "Package",
               "version": "[1.0.2.1, )"
             },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
             "RestSharp": {
               "target": "Package",
               "version": "[110.2.0, )"
+            },
+            "Rystem.OpenAi": {
+              "target": "Package",
+              "version": "[3.3.1, )"
             },
             "Slack.Webhooks": {
               "target": "Package",
               "version": "[1.1.5, )"
             },
+            "SlackConnector": {
+              "target": "Package",
+              "version": "[5.1.11, )"
+            },
             "SlackNet": {
+              "target": "Package",
+              "version": "[0.10.24, )"
+            },
+            "SlackNet.AspNetCore": {
+              "target": "Package",
+              "version": "[0.10.24, )"
+            },
+            "SlackNet.Bot": {
               "target": "Package",
               "version": "[0.10.24, )"
             }
