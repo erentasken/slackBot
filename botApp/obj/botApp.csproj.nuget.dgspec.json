@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {}
+    "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {
+    "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+        "projectUniqueName": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
         "projectName": "botApp",
-        "projectPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
-        "packagesPath": "C:\\Users\\erenn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\obj\\",
+        "projectPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+        "packagesPath": "C:\\Users\\hasan.kuspinar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erenn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hasan.kuspinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +60,14 @@
             "Rystem.OpenAi": {
               "target": "Package",
               "version": "[3.3.1, )"
+            },
+            "Slack.NetStandard": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Slack.NetStandard.RequestHandler": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "Slack.Webhooks": {
               "target": "Package",

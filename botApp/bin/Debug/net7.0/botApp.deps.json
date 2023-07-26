@@ -13,6 +13,8 @@
           "OpenAI": "1.7.2",
           "RestSharp": "110.2.0",
           "Rystem.OpenAi": "3.3.1",
+          "Slack.NetStandard": "6.0.0",
+          "Slack.NetStandard.RequestHandler": "3.1.1",
           "Slack.Webhooks": "1.1.5",
           "SlackConnector": "5.1.11",
           "SlackNet": "0.10.24",
@@ -842,6 +844,39 @@
           "lib/netstandard2.1/Rystem.OpenAi.Api.dll": {
             "assemblyVersion": "3.3.1.0",
             "fileVersion": "3.3.1.0"
+          }
+        }
+      },
+      "Slack.NetStandard/6.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "Slack.NetStandard.Endpoint/1.3.0": {
+        "dependencies": {
+          "Slack.NetStandard": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.Endpoint.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.3.0.0"
+          }
+        }
+      },
+      "Slack.NetStandard.RequestHandler/3.1.1": {
+        "dependencies": {
+          "Slack.NetStandard.Endpoint": "1.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.RequestHandler.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
           }
         }
       },
@@ -2427,6 +2462,27 @@
       "sha512": "sha512-kVZvcm5gGlp3TsErSc3Rr8e03cVXYVUIKSndTRWlcCNaayygCiBZBuH+wNRg1R/2rUbyJkwVGlRKVaSEe2sIYA==",
       "path": "rystem.openai/3.3.1",
       "hashPath": "rystem.openai.3.3.1.nupkg.sha512"
+    },
+    "Slack.NetStandard/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HLdYV0NrassU+2X6i2esRhvYyZLrZrGtUITAZdPWZbcn4cq21Xq0rnc2wfx+sgp9xehxVAsKITJwQqkvq2soNw==",
+      "path": "slack.netstandard/6.0.0",
+      "hashPath": "slack.netstandard.6.0.0.nupkg.sha512"
+    },
+    "Slack.NetStandard.Endpoint/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tgmQ5RFAu7pnKpTbe377sld7A3i56W70gtrr1PTUGLGz2QiUIYJ1MOIf6BTN543XLi2gbr3T7LwkNR9EsuAVDQ==",
+      "path": "slack.netstandard.endpoint/1.3.0",
+      "hashPath": "slack.netstandard.endpoint.1.3.0.nupkg.sha512"
+    },
+    "Slack.NetStandard.RequestHandler/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zvJ2AJxB6b2huMTW18HQgf2NWxrTQA9q+tB2I4gt/S8aRZpXd6WS8GuyjR3/V1qewU59vUygc0AnIE9DkqWIyQ==",
+      "path": "slack.netstandard.requesthandler/3.1.1",
+      "hashPath": "slack.netstandard.requesthandler.3.1.1.nupkg.sha512"
     },
     "Slack.Webhooks/1.1.5": {
       "type": "package",

@@ -1,8 +1,10 @@
 using botApp.Settings;
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RestSharp;
 using SlackIntegration.Pages;
 using SlackNet;
+using System.IO;
 
 namespace botApp.Pages
 {
@@ -19,28 +21,16 @@ namespace botApp.Pages
         public void OnPostUpdate()
         {
             var channels = Request.Form["channelNames"];
-            if (channels.Contains<string>("general"))
-            {
-                sendFileToChannel("general");
-            }
-            if (channels.Contains<string>("budget"))
-            {
-                sendFileToChannel("budget");
-            }
-            if (channels.Contains<string>("random"))
-            {
-                sendFileToChannel("random");
-            }
+            sendFileToChannel(channels);
 
             RedirectToPage("fileSender");
         }
 
         public void OnPostUploadFile()
         {
-            var fileName = Request.Form["fileNameFirst"];
-            var fileExtension = Request.Form["fileExtensionFirst"];
-            string fileFullName = fileName + "." + fileExtension;
-
+            IFormFile postedFile = Request.Form.Files["file12"];
+            string fileFullName = postedFile.FileName;
+            
             // Get the project's root directory path dynamically
             string rootDirectory = AppContext.BaseDirectory;
             string filesDirectory = "filesForUpload";
@@ -53,21 +43,10 @@ namespace botApp.Pages
             parentDirectory = Directory.GetParent(parentDirectory).FullName;
 
             filePath = parentDirectory + @"\filesForUpload" +@"\" + fileFullName;
-
             
             var channels = Request.Form["channelNamesFirst"];
-            if (channels.Contains("general"))
-            {
-                uploadFileToChannel(filePath, token.BotToken, "general");
-            }
-            if (channels.Contains("budget"))
-            {
-                uploadFileToChannel(filePath, token.BotToken, "budget");
-            }
-            if (channels.Contains("random"))
-            {
-                uploadFileToChannel(filePath, token.BotToken, "random");
-            }
+ 
+            uploadFileToChannel(filePath, token.BotToken, channels);
         }
 
         private async void sendFileToChannel(string channelName)

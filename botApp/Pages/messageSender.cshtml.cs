@@ -23,6 +23,7 @@ namespace botApp.Pages
         {
             var message = Request.Form["message"];
             var channels= Request.Form["channelNames"];
+            
 
             if (channels.Contains<string>("general")) {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";

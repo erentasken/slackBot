@@ -1629,6 +1629,42 @@
           "lib/netstandard2.1/Rystem.OpenAi.Api.dll": {}
         }
       },
+      "Slack.NetStandard/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Slack.NetStandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.dll": {}
+        }
+      },
+      "Slack.NetStandard.Endpoint/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Slack.NetStandard": "2.10.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Slack.NetStandard.Endpoint.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.Endpoint.dll": {}
+        }
+      },
+      "Slack.NetStandard.RequestHandler/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Slack.NetStandard.Endpoint": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Slack.NetStandard.RequestHandler.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Slack.NetStandard.RequestHandler.dll": {}
+        }
+      },
       "Slack.Webhooks/1.1.5": {
         "type": "package",
         "dependencies": {
@@ -4975,6 +5011,47 @@
         "openai.png",
         "rystem.openai.3.3.1.nupkg.sha512",
         "rystem.openai.nuspec"
+      ]
+    },
+    "Slack.NetStandard/6.0.0": {
+      "sha512": "HLdYV0NrassU+2X6i2esRhvYyZLrZrGtUITAZdPWZbcn4cq21Xq0rnc2wfx+sgp9xehxVAsKITJwQqkvq2soNw==",
+      "type": "package",
+      "path": "slack.netstandard/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/netstandard2.0/Slack.NetStandard.dll",
+        "slack.netstandard.6.0.0.nupkg.sha512",
+        "slack.netstandard.nuspec"
+      ]
+    },
+    "Slack.NetStandard.Endpoint/1.3.0": {
+      "sha512": "tgmQ5RFAu7pnKpTbe377sld7A3i56W70gtrr1PTUGLGz2QiUIYJ1MOIf6BTN543XLi2gbr3T7LwkNR9EsuAVDQ==",
+      "type": "package",
+      "path": "slack.netstandard.endpoint/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/Slack.NetStandard.Endpoint.dll",
+        "slack.netstandard.endpoint.1.3.0.nupkg.sha512",
+        "slack.netstandard.endpoint.nuspec"
+      ]
+    },
+    "Slack.NetStandard.RequestHandler/3.1.1": {
+      "sha512": "zvJ2AJxB6b2huMTW18HQgf2NWxrTQA9q+tB2I4gt/S8aRZpXd6WS8GuyjR3/V1qewU59vUygc0AnIE9DkqWIyQ==",
+      "type": "package",
+      "path": "slack.netstandard.requesthandler/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/netstandard2.0/Slack.NetStandard.RequestHandler.dll",
+        "slack.netstandard.requesthandler.3.1.1.nupkg.sha512",
+        "slack.netstandard.requesthandler.nuspec"
       ]
     },
     "Slack.Webhooks/1.1.5": {
@@ -9193,6 +9270,8 @@
       "OpenAI >= 1.7.2",
       "RestSharp >= 110.2.0",
       "Rystem.OpenAi >= 3.3.1",
+      "Slack.NetStandard >= 6.0.0",
+      "Slack.NetStandard.RequestHandler >= 3.1.1",
       "Slack.Webhooks >= 1.1.5",
       "SlackConnector >= 5.1.11",
       "SlackNet >= 0.10.24",
@@ -9201,19 +9280,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\erenn\\.nuget\\packages\\": {}
+    "C:\\Users\\hasan.kuspinar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+      "projectUniqueName": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
       "projectName": "botApp",
-      "projectPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
-      "packagesPath": "C:\\Users\\erenn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erenn\\Masaüstü\\slackBot\\botApp\\obj\\",
+      "projectPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+      "packagesPath": "C:\\Users\\hasan.kuspinar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\erenn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hasan.kuspinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9259,6 +9338,14 @@
           "Rystem.OpenAi": {
             "target": "Package",
             "version": "[3.3.1, )"
+          },
+          "Slack.NetStandard": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "Slack.NetStandard.RequestHandler": {
+            "target": "Package",
+            "version": "[3.1.1, )"
           },
           "Slack.Webhooks": {
             "target": "Package",

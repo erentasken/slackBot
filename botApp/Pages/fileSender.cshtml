@@ -10,42 +10,32 @@
     <hr/>
     <div class="row">
         <div class="col-lg-6">
-            <h6 class ="display-8 text-center">Yeni dosya oluşturup yükleme aracı: </h6>
-            <form method="POST">
-                <div class="mb-3">
-                    <label for="fileNameFirst" class="form-label">Gönderilecek dosya adı:</label>
-                    <input type="text" class="form-control" name="fileNameFirst" />
-                </div>
-
-                <div class="mb-3">
-                    <label for="fileExtensionFirst" class="form-label">Gönderilecek dosya uzantısı:</label>
-                    <input type="text" class="form-control" name="fileExtensionFirst" />
-                </div>
-
+            <h6 class ="display-8 text-center">Local dosya yükleme aracı: </h6>
+      
+            <form method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var fileSender = new fileSenderModel(); 
-                        var channelNames = await fileSender.FetchChannelNamesAsync(); 
+                        var fileSender = new fileSenderModel();
+                        var channelNames = await fileSender.FetchChannelNamesAsync();
 
                         if (channelNames != null)
                         {
                             for (int i = 0; i < channelNames.Length; i++)
                             {
-                                <input type="checkbox" name="channelNamesFirst" value="@channelNames[i]">
-                                <label for="channelNamesFirst">@channelNames[i]</label>
+                                            <input type="checkbox" name="channelNamesFirst" value="@channelNames[i]">
+                                            <label for="channelNamesFirst">@channelNames[i]</label>
                             }
                         }
                     }
                 </div>
-
-                <div class="text-center" name="appendDiv">
-                    <button type="submit" class="btn btn-primary" name="Update" asp-page-handler="UploadFile" id="denemeButton">Deneme</button>
-                </div>
+                <label for="file12" class="form-label">Dosya seçiniz:</label>
+                <input type="file" name="file12" />
+                <input type="submit" asp-page-handler="UploadFile"/>
             </form>
         </div>
         <div class="col-lg-6">
-            <h6 class= "display-8 text-center">Local dosya yükleme aracı: </h6>
+            <h6 class= "display-8 text-center">Yeni dosya oluşturup yükleme aracı: </h6>
             <form method="POST">
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Gönderilecek dosya adı:</label>

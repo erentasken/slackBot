@@ -1,9 +1,17 @@
 using botApp.Settings;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using OpenAI_API;
 using OpenAI_API.Completions;
 using OpenAI_API.Models;
+using Slack.NetStandard;
+using Slack.NetStandard.RequestHandler;
+using Slack.NetStandard.Socket;
+using Slack.NetStandard.Interaction;
+using System.Net.WebSockets;
+using Slack.NetStandard.RequestHandler.Handlers;
+using Slack.Webhooks;
 
 namespace botApp.Pages
 {
@@ -15,7 +23,7 @@ namespace botApp.Pages
         public void OnGet()
         {
             openAi = OpenAI.GetObject();
-            APIkey = openAi.openAiKey;ff
+            APIkey = openAi.openAiKey;
         }
 
         [BindProperty]
@@ -25,11 +33,11 @@ namespace botApp.Pages
         public async Task OnPostAsync()
         {
             var openAI = new OpenAIAPI(APIkey);
-
+            
             var completionRequest = new CompletionRequest
             {
                 Prompt = Prompt,
-                Model = Model.DavinciText
+                Model = Model.ChatGPTTurbo
             };
 
             var completions = await openAI.Completions.CreateCompletionAsync(completionRequest);
