@@ -10,6 +10,7 @@
         "dependencies": {
           "Grpc.Core": "2.46.6",
           "JMS.UploadFile.AspNetCore": "1.0.2.1",
+          "Newtonsoft.Json": "13.0.3",
           "OpenAI": "1.7.2",
           "RestSharp": "110.2.0",
           "Rystem.OpenAi": "3.3.1",

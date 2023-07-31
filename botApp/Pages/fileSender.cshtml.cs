@@ -1,10 +1,14 @@
 using botApp.Settings;
 using Grpc.Core;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using RestSharp;
 using SlackIntegration.Pages;
 using SlackNet;
+using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Text;
 
 namespace botApp.Pages
 {
@@ -13,9 +17,13 @@ namespace botApp.Pages
         static readonly HttpClient httpClient = new HttpClient();
         private readonly ILogger<IndexModel> _logger;
         private SlackToken token;
+        private string API_key;
+        private OpenAI openai;
         public fileSenderModel()
         {
             token = SlackToken.GetObject();
+            openai = OpenAI.GetObject();
+            API_key = openai.openAiKey;
         }
 
         public void OnPostUpdate()
@@ -103,6 +111,77 @@ namespace botApp.Pages
 
             return response;
         }
+        
+        public void OnPostUploadImage()
+        {
+            var prompt = Request.Form["prompt"];
+            string url = "https://api.openai.com/v1/images/generations";
+            string bearerToken = API_key;
+            Json_Convert json1 = new Json_Convert();
+            json1.prompt = prompt;
+            json1.n = 1;
+            json1.size = "256x256";
+            json1.response_format = "b64_json";
+            string body = JsonConvert.SerializeObject(json1);
+            //string body = "{\"prompt\": \"an isometric view of a miniature city, tilt shift, bokeh, voxel, vray render, high detail\",\"n\": 1,\"size\": \"256x256\",\"response_format\":\"b64_json\"}";
+
+            // Prepare data for the POST request
+            var data = Encoding.ASCII.GetBytes(body);
+            Console.WriteLine(data);
+
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            // Authentication
+            if (bearerToken != null)
+            {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                request.PreAuthenticate = true;
+                request.Headers.Add("Authorization", "Bearer " + bearerToken);
+            }
+            else
+            {
+                request.Credentials = CredentialCache.DefaultCredentials;
+            }
+
+            // Perform request
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            // Retrieve response
+            var response = (HttpWebResponse)request.GetResponse();
+            Console.WriteLine("Request response: " + response.StatusCode);
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+
+            // Deserialize JSON
+            dynamic responseJson = JsonConvert.DeserializeObject<dynamic>(responseString);
+
+            var channels = Request.Form["channelNamesSecond"];
+            for (int i = 0; i < responseJson.data.Count; i++)
+            {
+                string base64 = responseJson.data[i].b64_json;
+
+                Bitmap img = Base64StringToBitmap(base64);
+
+                long unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds();
+                string filename = string.Format("image_{0}_{1}.png", unixTime, i);
+
+                img.Save(filename);
+                Console.WriteLine("Saving image to " + filename);
+                string FilePath = @"C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\filesForUpload\"+ filename;
+                System.IO.File.Move(filename, FilePath);
+                uploadFileToChannel(FilePath, token.BotToken, channels);
+                Console.WriteLine(channels);
+            }
+        }
 
         public async Task<string[]> FetchChannelNamesAsync()
         {
@@ -150,6 +229,24 @@ namespace botApp.Pages
             }
             return null;
 
+        }
+
+        public static Bitmap Base64StringToBitmap(string base64String)
+        {
+            Bitmap bmpReturn = null;
+
+            byte[] byteBuffer = Convert.FromBase64String(base64String);
+            MemoryStream memoryStream = new MemoryStream(byteBuffer);
+
+            memoryStream.Position = 0;
+
+            bmpReturn = (Bitmap)Bitmap.FromStream(memoryStream);
+
+            memoryStream.Close();
+            memoryStream = null;
+            byteBuffer = null;
+
+            return bmpReturn;
         }
     }
 }

@@ -81,5 +81,34 @@
                 </div>
             </form>
         </div>
+        <div class="col-lg-6">
+            <h6 class= "display-8 text-center">Dall-e aracı: </h6>
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Prompt giriniz:</label>
+                    <input type="text" class="form-control" name="prompt" />
+                </div>
+                <div class="mb-3">
+                    <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
+                    @{
+                        var fileSenderSecond = new fileSenderModel();
+                        var channelNamesSecond = await fileSenderSecond.FetchChannelNamesAsync();
+
+                        if (channelNamesSecond != null)
+                        {
+                            for (int i = 0; i < channelNamesSecond.Length; i++)
+                            {
+                                            <input type="checkbox" name="channelNamesSecond" value="@channelNamesSecond[i]">
+                                            <label for="channelNamesSecond">@channelNamesSecond[i]</label>
+                            }
+                        }
+                    }
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" name="Update" asp-page-handler="UploadImage">Dosyayı Gönder</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
