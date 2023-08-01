@@ -176,7 +176,16 @@ namespace botApp.Pages
 
                 img.Save(filename);
                 Console.WriteLine("Saving image to " + filename);
-                string FilePath = @"C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\filesForUpload\"+ filename;
+                // Get the project's root directory path dynamically
+                string rootDirectory = AppContext.BaseDirectory;
+                
+                string parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
+                parentDirectory = Directory.GetParent(parentDirectory).FullName;
+                parentDirectory = Directory.GetParent(parentDirectory).FullName;
+                parentDirectory = Directory.GetParent(parentDirectory).FullName;
+
+                string FilePath = parentDirectory + @"\filesForUpload" + @"\" + filename;
+
                 System.IO.File.Move(filename, FilePath);
                 uploadFileToChannel(FilePath, token.BotToken, channels);
                 Console.WriteLine(channels);
