@@ -233,8 +233,6 @@ C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\botApp.pdb
 C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\botApp.genruntimeconfig.cache
 C:\Users\erenn\Masaüstü\slackBot\botApp\obj\Debug\net7.0\ref\botApp.dll
 C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\RestSharp.dll
-C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\appsettings.json
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.staticwebassets.runtime.json
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.exe
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\botApp.deps.json
@@ -444,3 +442,12 @@ C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\obj\
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\obj\Debug\net7.0\ref\botApp.dll
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.Endpoint.dll
 C:\Users\hasan.kuspinar\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.RequestHandler.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Settings\appsettings.Development.json
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Settings\appsettings.json
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Flurl.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Flurl.Http.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.Endpoint.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.RequestHandler.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\SlackConnector.dll
+C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Websocket.Client.dll
