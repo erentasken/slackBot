@@ -1,50 +1,70 @@
+using System.Text;
 using botApp.Settings;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json;
-using OpenAI_API;
-using OpenAI_API.Completions;
-using OpenAI_API.Models;
-using Slack.NetStandard;
-using Slack.NetStandard.RequestHandler;
-using Slack.NetStandard.Socket;
-using Slack.NetStandard.Interaction;
-using System.Net.WebSockets;
-using Slack.NetStandard.RequestHandler.Handlers;
-using Slack.Webhooks;
+using Newtonsoft.Json.Linq;
+using Rystem.OpenAi;
 
 namespace botApp.Pages
 {
     public class gptTryingModel : PageModel
     {
-        private string APIkey;
-        private OpenAI openAi;
+        private SlackToken token;
+        private string API_key;
+        private OpenAI openai;
 
-        public void OnGet()
+        public gptTryingModel()
         {
-            openAi = OpenAI.GetObject();
-            APIkey = openAi.openAiKey;
+            token = SlackToken.GetObject();
+            openai = OpenAI.GetObject();
+            API_key = openai.openAiKey;
         }
 
         [BindProperty]
         public string Prompt { get; set; }
         public string ResultText { get; set; }
 
-        public async Task OnPostAsync()
+        public async Task OnPostUpdate()
         {
-            var openAI = new OpenAIAPI(APIkey);
-            
-            var completionRequest = new CompletionRequest
+            Prompt = Request.Form["prompt"];
+            var conversation = new[]
             {
-                Prompt = Prompt,
-                Model = Model.ChatGPTTurbo
+                new { role = "system", content = "You are a helpful assistant." },
+                //new { role = "user", content = "Who won the world series in 2020?" },
+                new { role = "user", content = Prompt },
             };
 
-            var completions = await openAI.Completions.CreateCompletionAsync(completionRequest);
+            // Create the JSON payload directly
+            string jsonRequest = $@"{{
+                ""model"": ""gpt-3.5-turbo"",
+                ""messages"": {Newtonsoft.Json.JsonConvert.SerializeObject(conversation)},
+                ""max_tokens"": 1500
+            }}";
 
-            foreach (var completion in completions.Completions)
+            // Prepare the HTTP request
+            using (var httpClient = new HttpClient())
             {
-                ResultText = completion.Text;
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {API_key}");
+
+                // Send the POST request to the API
+                var response = await httpClient.PostAsync("https://api.openai.com/v1/chat/completions", new StringContent(jsonRequest, Encoding.UTF8, "application/json"));
+
+                // Read the response and extract the completion result
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    dynamic completionResult = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonResponse);
+                    string resultText = completionResult.choices[0].message.content;
+                    Console.WriteLine("This is the result : " + resultText);
+                    ResultText = resultText;
+                    return;
+                }
+                else
+                {
+                    // Handle error response
+                    Console.WriteLine("Error code: " + response.StatusCode);
+                    return;
+                }
             }
         }
     }

@@ -451,3 +451,6 @@ C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Deb
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.RequestHandler.dll
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\SlackConnector.dll
 C:\Users\eren.tasken\OneDrive - sabancidx.com\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Websocket.Client.dll
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.dll
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.Endpoint.dll
+C:\Users\erenn\Masaüstü\slackBot\botApp\bin\Debug\net7.0\Slack.NetStandard.RequestHandler.dll
