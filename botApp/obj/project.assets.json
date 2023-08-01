@@ -9281,19 +9281,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eren.tasken\\.nuget\\packages\\": {}
+    "C:\\Users\\hasan.kuspinar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+      "projectUniqueName": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
       "projectName": "botApp",
-      "projectPath": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
-      "packagesPath": "C:\\Users\\eren.tasken\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\",
+      "projectPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\botApp.csproj",
+      "packagesPath": "C:\\Users\\hasan.kuspinar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\eren.tasken\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hasan.kuspinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

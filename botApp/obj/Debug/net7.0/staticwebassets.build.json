@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LZapULYLnL/A6jNKT6pJLQcMDCr4CBZ/dWnldBHlmfE=",
+  "Hash": "Em08kRnsEEEiDZFRTmjUC2W2TLBEn2YK4LaZm4bYw/E=",
   "Source": "botApp",
   "BasePath": "_content/botApp",
   "Mode": "Default",
@@ -9,10 +9,10 @@
   "DiscoveryPatterns": [],
   "Assets": [
     {
-      "Identity": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css",
+      "Identity": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css",
       "SourceId": "botApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/botApp",
       "RelativePath": "botApp.styles.css",
       "AssetKind": "All",
@@ -23,13 +23,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css"
+      "OriginalItemSpec": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\botApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css",
+      "Identity": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css",
       "SourceId": "botApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/botApp",
       "RelativePath": "botApp.bundle.scp.css",
       "AssetKind": "All",
@@ -40,7 +40,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\eren.tasken\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\hasan.kuspinar\\OneDrive - sabancidx.com\\Masaüstü\\slackBot\\botApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\botApp.bundle.scp.css"
     }
   ]
 }
