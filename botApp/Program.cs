@@ -1,3 +1,5 @@
+using botApp.Pages;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -19,6 +21,8 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-
+MyHttpRequestHandler apiPostRequest = new MyHttpRequestHandler("http://localhost:8080/");
+Thread myThread = new Thread(apiPostRequest.initAPI);
+myThread.Start();
 
 app.Run();
