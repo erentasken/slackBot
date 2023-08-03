@@ -14,9 +14,6 @@ namespace botApp.Pages
         private OpenAI openai;
         public gptTryingModel()
         {
-            Console.WriteLine("i am up ");
-            
-
             token = SlackToken.GetObject();
             openai = OpenAI.GetObject();
             API_key = openai.openAiKey;
@@ -32,7 +29,6 @@ namespace botApp.Pages
             var conversation = new[]
             {
                 new { role = "system", content = "You are a helpful assistant." },
-                //new { role = "user", content = "Who won the world series in 2020?" },
                 new { role = "user", content = Prompt },
             };
 
@@ -74,7 +70,6 @@ namespace botApp.Pages
             var conversation = new[]
             {
                 new { role = "system", content = "You are a helpful assistant." },
-                //new { role = "user", content = "Who won the world series in 2020?" },
                 new { role = "user", content = prompt },
             };
 
@@ -88,10 +83,9 @@ namespace botApp.Pages
             // Prepare the HTTP request
             using (var httpClient = new HttpClient())
             {
-                //httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {API_key}");
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer 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");
-
-
+                var keyObject = OpenAI.GetObject();
+                
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {keyObject.openAiKey}");
                 
                 var response = await httpClient.PostAsync("https://api.openai.com/v1/chat/completions", new StringContent(jsonRequest, Encoding.UTF8, "application/json"));
 
