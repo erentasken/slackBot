@@ -165,31 +165,106 @@ namespace botApp.Pages
             dynamic responseJson = JsonConvert.DeserializeObject<dynamic>(responseString);
 
             var channels = Request.Form["channelNamesSecond"];
-            for (int i = 0; i < responseJson.data.Count; i++)
+
+            string base64 = responseJson.data[0].b64_json;
+
+            Bitmap img = Base64StringToBitmap(base64);
+
+            long unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds();
+            string filename = string.Format("image_{0}_{1}.png", unixTime, 0);
+
+            img.Save(filename);
+            Console.WriteLine("Saving image to " + filename);
+            // Get the project's root directory path dynamically
+            string rootDirectory = AppContext.BaseDirectory;
+
+            string parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+
+            string FilePath = parentDirectory + @"\filesForUpload" + @"\" + filename;
+
+            System.IO.File.Move(filename, FilePath);
+            uploadFileToChannel(FilePath, token.BotToken, channels);
+            Console.WriteLine(channels);
+        }
+
+        public static string useDallE(string prompt) {
+            Console.WriteLine("you are in filesender model ");
+            var keyObject = OpenAI.GetObject();
+            string url = "https://api.openai.com/v1/images/generations";
+            string bearerToken = keyObject.openAiKey;
+            Json_Convert json1 = new Json_Convert();
+            json1.prompt = prompt;
+            json1.n = 1;
+            json1.size = "256x256";
+            json1.response_format = "b64_json";
+            string body = JsonConvert.SerializeObject(json1);
+            //string body = "{\"prompt\": \"an isometric view of a miniature city, tilt shift, bokeh, voxel, vray render, high detail\",\"n\": 1,\"size\": \"256x256\",\"response_format\":\"b64_json\"}";
+
+            // Prepare data for the POST request
+            var data = Encoding.ASCII.GetBytes(body);
+            Console.WriteLine(data);
+
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            // Authentication
+            if (bearerToken != null)
             {
-                string base64 = responseJson.data[i].b64_json;
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                Bitmap img = Base64StringToBitmap(base64);
-
-                long unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds();
-                string filename = string.Format("image_{0}_{1}.png", unixTime, i);
-
-                img.Save(filename);
-                Console.WriteLine("Saving image to " + filename);
-                // Get the project's root directory path dynamically
-                string rootDirectory = AppContext.BaseDirectory;
-                
-                string parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
-                parentDirectory = Directory.GetParent(parentDirectory).FullName;
-                parentDirectory = Directory.GetParent(parentDirectory).FullName;
-                parentDirectory = Directory.GetParent(parentDirectory).FullName;
-
-                string FilePath = parentDirectory + @"\filesForUpload" + @"\" + filename;
-
-                System.IO.File.Move(filename, FilePath);
-                uploadFileToChannel(FilePath, token.BotToken, channels);
-                Console.WriteLine(channels);
+                request.PreAuthenticate = true;
+                request.Headers.Add("Authorization", "Bearer " + bearerToken);
             }
+            else
+            {
+                request.Credentials = CredentialCache.DefaultCredentials;
+            }
+
+            // Perform request
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            // Retrieve response
+            var response = (HttpWebResponse)request.GetResponse();
+            Console.WriteLine("Request response: " + response.StatusCode);
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+
+            // Deserialize JSON
+            dynamic responseJson = JsonConvert.DeserializeObject<dynamic>(responseString);
+
+            //var channels = Request.Form["channelNamesSecond"];
+            string base64 = responseJson.data[0].b64_json;
+
+            Bitmap img = Base64StringToBitmap(base64);
+
+            long unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds();
+            string filename = string.Format("image_{0}_{1}.png", unixTime, 0);
+
+            img.Save(filename);
+            Console.WriteLine("Saving image to " + filename);
+            // Get the project's root directory path dynamically
+            string rootDirectory = AppContext.BaseDirectory;
+
+            string parentDirectory = Directory.GetParent(Directory.GetParent(rootDirectory).FullName).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+            parentDirectory = Directory.GetParent(parentDirectory).FullName;
+
+            string FilePath = parentDirectory + @"\filesForUpload" + @"\" + filename;
+
+            System.IO.File.Move(filename, FilePath);
+
+            return FilePath;
         }
 
         public async Task<string[]> FetchChannelNamesAsync()

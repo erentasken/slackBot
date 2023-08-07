@@ -1,4 +1,5 @@
 using System.Text;
+using Azure;
 using botApp.Settings;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -103,7 +104,6 @@ namespace botApp.Pages
                     return "Error code: " + response.StatusCode;
                 }
             }
-        } 
-
+        }
     }
 }
