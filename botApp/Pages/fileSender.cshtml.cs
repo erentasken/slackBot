@@ -79,7 +79,7 @@ namespace botApp.Pages
             }
         }
 
-        private void uploadFileToChannel(string filePath, string token, string channel)
+        public static void uploadFileToChannel(string filePath, string token, string channel)
         {
             var response = requestFromApi(filePath, token, channel);
 
@@ -93,7 +93,7 @@ namespace botApp.Pages
             }
         }
 
-        private RestResponse requestFromApi(string filePath, string token, string channel)
+        private static RestResponse requestFromApi(string filePath, string token, string channel)
         {
             var client = new RestClient("https://slack.com/api/files.upload");
             var request = new RestRequest("https://slack.com/api/files.upload", Method.Post);
@@ -191,7 +191,6 @@ namespace botApp.Pages
         }
 
         public static string useDallE(string prompt) {
-            Console.WriteLine("you are in filesender model ");
             var keyObject = OpenAI.GetObject();
             string url = "https://api.openai.com/v1/images/generations";
             string bearerToken = keyObject.openAiKey;

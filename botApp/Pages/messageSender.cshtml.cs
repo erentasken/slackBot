@@ -27,22 +27,22 @@ namespace botApp.Pages
 
             if (channels.Contains<string>("general")) {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("general", message);
+                sendMessageToChannel("general", message, SlackWebhookUrl);
             }
             if (channels.Contains<string>("budget")) {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("budget", message);
+                sendMessageToChannel("budget", message, SlackWebhookUrl);
             }
             if (channels.Contains<string>("random"))
             {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("random", message);
+                sendMessageToChannel("random", message, SlackWebhookUrl);
             }
 
             RedirectToPage("messageSender");
         }
 
-        private void sendMessageToChannel(string channelName, string message)
+        public static void sendMessageToChannel(string channelName, string message, string SlackWebhookUrl)
         {
             var slackClient = new SlackClient(SlackWebhookUrl);
             var slackMessage = new SlackMessage

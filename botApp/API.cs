@@ -1,13 +1,8 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Text;
 using System.Web;
 using botApp.Pages;
 using botApp.Settings;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using Slack.Webhooks;
-using SlackNet.Events;
 
 public class MyHttpRequestHandler
 {   
@@ -39,61 +34,6 @@ public class MyHttpRequestHandler
         }
     }
 
-    private void sendMessageToChannel(string channelName, string message, string SlackWebhookUrl)
-    {
-        var slackClient = new SlackClient(SlackWebhookUrl);
-        var slackMessage = new SlackMessage
-        {
-            Text = message,
-            Channel = channelName + "#"
-        };
-
-        try
-        {
-            slackClient.Post(slackMessage);
-
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-    }
-
-
-    private void uploadFileToChannel(string filePath, string token, string channel)
-    {
-        var response = requestFromApi(filePath, token, channel);
-
-        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-        {
-            Console.WriteLine("File uploaded successfully!");
-        }
-        else
-        {
-            Console.WriteLine("Error uploading file: " + response.Content);
-        }
-    }
-
-    private RestResponse requestFromApi(string filePath, string token, string channel)
-    {
-        var client = new RestClient("https://slack.com/api/files.upload");
-        var request = new RestRequest("https://slack.com/api/files.upload", Method.Post);
-        request.AddParameter("token", token);
-        request.AddParameter("channels", channel);
-
-        try
-        {
-            request.AddFile("file", filePath);
-        }
-        catch (FileNotFoundException e)
-        {
-            Console.WriteLine(e.Message);
-        }
-        var response = client.Execute(request);
-
-        return response;
-    }
-
     public async void HandleRequest(HttpListenerContext context)
     {
         if (context.Request.HttpMethod == "POST")
@@ -122,17 +62,17 @@ public class MyHttpRequestHandler
                     if (textParameter2 == "general")
                     {
                         SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                        sendMessageToChannel("general", gptResponse, SlackWebhookUrl);
+                        messageSenderModel.sendMessageToChannel("general", gptResponse, SlackWebhookUrl);
                     }
                     if (textParameter2 == "budget")
                     {
                         SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                        sendMessageToChannel("budget", gptResponse, SlackWebhookUrl);
+                        messageSenderModel.sendMessageToChannel("budget", gptResponse, SlackWebhookUrl);
                     }
                     if (textParameter2 == "random")
                     {
                         SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                        sendMessageToChannel("random", gptResponse, SlackWebhookUrl);
+                        messageSenderModel.sendMessageToChannel("random", gptResponse, SlackWebhookUrl);
                     }
 
                     context.Response.StatusCode = (int)HttpStatusCode.OK;
@@ -175,7 +115,7 @@ public class MyHttpRequestHandler
 
                     string FilePath= fileSenderModel.useDallE(textParameter);
 
-                    uploadFileToChannel(FilePath, token.BotToken, textParameter2);
+                    fileSenderModel.uploadFileToChannel(FilePath, token.BotToken, textParameter2);
                    
 
                     context.Response.StatusCode = (int)HttpStatusCode.OK;
@@ -205,5 +145,6 @@ public class MyHttpRequestHandler
             context.Response.OutputStream.Write(errorBytes, 0, errorBytes.Length);
             context.Response.OutputStream.Close();
         }
+
     }
 }
