@@ -12,14 +12,14 @@ using System.Text;
 
 namespace botApp.Pages
 {
-    public class fileSenderModel : PageModel
+    public class FileSenderModel : PageModel
     {
         static readonly HttpClient httpClient = new HttpClient();
         private readonly ILogger<IndexModel> _logger;
         private SlackToken token;
         private string API_key;
         private OpenAI openai;
-        public fileSenderModel()
+        public FileSenderModel()
         {
             token = SlackToken.GetObject();
             openai = OpenAI.GetObject();

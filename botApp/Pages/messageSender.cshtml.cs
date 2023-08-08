@@ -5,16 +5,15 @@ using SlackIntegration.Pages;
 
 namespace botApp.Pages
 {
-    public class messageSenderModel : PageModel
+    public class MessageSenderModel : PageModel
     {
         static readonly HttpClient httpClient = new HttpClient();
         private string SlackWebhookUrl;
-        private readonly ILogger<IndexModel> _logger;
         private readonly string botToken;
 
         SlackToken token;
 
-        public messageSenderModel()
+        public MessageSenderModel()
         {
             token = SlackToken.GetObject();
         }
@@ -27,28 +26,27 @@ namespace botApp.Pages
 
             if (channels.Contains<string>("general")) {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("general", message, SlackWebhookUrl);
+                sendMessageToChannel(message, SlackWebhookUrl);
             }
             if (channels.Contains<string>("budget")) {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("budget", message, SlackWebhookUrl);
+                sendMessageToChannel(message, SlackWebhookUrl);
             }
             if (channels.Contains<string>("random"))
             {
                 SlackWebhookUrl = "https://hooks.slack.com/services/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";
-                sendMessageToChannel("random", message, SlackWebhookUrl);
+                sendMessageToChannel(message, SlackWebhookUrl);
             }
 
             RedirectToPage("messageSender");
         }
 
-        public static void sendMessageToChannel(string channelName, string message, string SlackWebhookUrl)
+        public static void sendMessageToChannel(string message, string SlackWebhookUrl)
         {
             var slackClient = new SlackClient(SlackWebhookUrl);
             var slackMessage = new SlackMessage
             {
                 Text = message,
-                Channel = channelName + "#"
             };
 
             try
@@ -58,7 +56,7 @@ namespace botApp.Pages
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
 

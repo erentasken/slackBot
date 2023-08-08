@@ -1,5 +1,5 @@
 ﻿@page
-@model botApp.Pages.messageSenderModel
+@model botApp.Pages.MessageSenderModel
 
 @{
     ViewData["Title"] = "Message sender";
@@ -19,7 +19,7 @@
                 <div class ="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var messageSender = new messageSenderModel(); 
+                        var messageSender = new MessageSenderModel(); 
                         var channelNames = await messageSender.FetchChannelNamesAsync(); 
 
                         if (channelNames != null)

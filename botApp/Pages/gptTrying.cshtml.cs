@@ -1,19 +1,16 @@
 using System.Text;
-using Azure;
 using botApp.Settings;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json.Linq;
-using Rystem.OpenAi;
 
 namespace botApp.Pages
 {
-    public class gptTryingModel : PageModel
+    public class GptTryingModel : PageModel
     {
         private SlackToken token;
         private string API_key;
         private OpenAI openai;
-        public gptTryingModel()
+        public GptTryingModel()
         {
             token = SlackToken.GetObject();
             openai = OpenAI.GetObject();
@@ -27,44 +24,7 @@ namespace botApp.Pages
         public async Task OnPostUpdate()
         {
             Prompt = Request.Form["prompt"];
-            var conversation = new[]
-            {
-                new { role = "system", content = "You are a helpful assistant." },
-                new { role = "user", content = Prompt },
-            };
-
-            // Create the JSON payload directly
-            string jsonRequest = $@"{{
-                ""model"": ""gpt-3.5-turbo"",
-                ""messages"": {Newtonsoft.Json.JsonConvert.SerializeObject(conversation)},
-                ""max_tokens"": 1500
-            }}";
-
-            // Prepare the HTTP request
-            using (var httpClient = new HttpClient())
-            {
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {API_key}");
-
-                // Send the POST request to the API
-                var response = await httpClient.PostAsync("https://api.openai.com/v1/chat/completions", new StringContent(jsonRequest, Encoding.UTF8, "application/json"));
-
-                // Read the response and extract the completion result
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    dynamic completionResult = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonResponse);
-                    string resultText = completionResult.choices[0].message.content;
-                    Console.WriteLine("This is the result : " + resultText);
-                    ResultText = resultText;
-                    return;
-                }
-                else
-                {
-                    // Handle error response
-                    Console.WriteLine("Error code: " + response.StatusCode);
-                    return;
-                }
-            }
+            ResultText = await useChat(Prompt);
         }
 
         public static async Task<string> useChat(string prompt) {

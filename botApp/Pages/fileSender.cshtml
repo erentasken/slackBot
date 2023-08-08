@@ -1,5 +1,5 @@
 ﻿@page
-@model botApp.Pages.fileSenderModel
+@model botApp.Pages.FileSenderModel
 
 @{
 	ViewData["Title"] = "File sender";
@@ -16,7 +16,7 @@
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var fileSender = new fileSenderModel();
+                        var fileSender = new FileSenderModel();
                         var channelNames = await fileSender.FetchChannelNamesAsync();
 
                         if (channelNames != null)
@@ -44,7 +44,7 @@
                     <div class="mb-3">
                         <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                         @{
-                            var fileSenderSecond = new fileSenderModel();
+                            var fileSenderSecond = new FileSenderModel();
                             var channelNamesSecond = await fileSenderSecond.FetchChannelNamesAsync();
 
                             if (channelNamesSecond != null)
@@ -91,7 +91,7 @@
                 <div class="mb-3">
                     <label for="fileName" class="form-label">Kanalları Seçiniz:</label>
                     @{
-                        var fileSenderFirst = new fileSenderModel();
+                        var fileSenderFirst = new FileSenderModel();
                         var channelNamesFirst = await fileSenderFirst.FetchChannelNamesAsync();
 
                         if (channelNamesFirst != null)
